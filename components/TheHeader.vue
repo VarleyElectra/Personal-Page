@@ -95,7 +95,7 @@ export default {
   transform: translateX(0);
 }
 .menu__link.active {
-  background: linear-gradient(99.05deg, $primaryColor 0.07%, $subColor 106.32%);
+  @include main-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -104,7 +104,7 @@ export default {
   visibility: visible;
 }
 .menu__link:hover{
-  background: linear-gradient(99.05deg, $primaryColor 0.07%, $subColor 106.32%);
+  @include main-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -117,7 +117,7 @@ export default {
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
-  color: #E3E4E6;
+  color: $textSubColor;
   text-decoration: none;
   position: relative;
 }
@@ -126,7 +126,7 @@ export default {
   width: 100%;
   height: 3px;
   border-radius: 15px;
-  background: linear-gradient(99.05deg, $primaryColor 0.07%, $subColor 106.32%);
+  @include main-gradient;
   position: absolute;
   bottom: -8px;
   opacity: 0;
@@ -146,7 +146,7 @@ export default {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: $textSubColor;
   transition: all .2s;
 }
 .menu__icon span:first-child {

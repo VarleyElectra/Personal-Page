@@ -1,7 +1,12 @@
 <template>
   <section id="home" class="observe hero">
     <div class="container">
-      <h1 class="hero__title">I'm a frontend developer <br> specialising in <br> <span>Vue</span> and <span>Nuxt</span></h1>
+      <h1 class="hero__title">I'm a
+        <span class="hero__text hero__text_color_white">Frontend Developer</span>
+        <br> specialising in <br>
+        <span class="hero__text hero__text_color_main-gradient">Vue</span>
+        and
+        <span class="hero__text hero__text_color_main-gradient">Nuxt</span></h1>
       <a href="#work" class="hero__arrow"></a>
     </div>
   </section>
@@ -28,13 +33,16 @@ export default {
   text-align: center;
   line-height: 150%;
   letter-spacing: -0.02em;
-  color: rgba(227, 228, 230, 0.55);
+  color: $textMainColor;
 }
-.hero__title span {
+.hero__text_color_main-gradient {
   font-weight: 600;
-  background: linear-gradient($primaryColor, $subColor);
+  @include main-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.hero__text_color_white {
+  color: $textSubColor;
 }
 .hero__arrow {
   border: none;

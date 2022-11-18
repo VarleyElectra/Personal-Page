@@ -3,8 +3,9 @@
 <!--    <img src="~/assets/img/cards/card-1.png" alt="Discover Nuxt 3" />-->
     <TheHeader />
     <TheHero />
+    <TheTools />
 <!--    <NuxtWelcome />-->
-    <TheFooter />
+<!--    <TheFooter />-->
 </template>
 
 <script>
@@ -30,7 +31,5 @@ export default {
 </script>
 
 <script setup>
-import TheHero from "./components/TheHero";
-
 const appConfig = useAppConfig()
 </script>

@@ -5,3 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin main-gradient {
+  background: linear-gradient(99.05deg, $primaryColor 0.07%, $subColor 106.32%);
+}
