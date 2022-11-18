@@ -4,6 +4,7 @@
     <TheHeader />
     <TheHero />
     <TheTools />
+    <TheWorks />
 <!--    <NuxtWelcome />-->
 <!--    <TheFooter />-->
 </template>

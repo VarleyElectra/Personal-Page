@@ -1,7 +1,7 @@
 <template>
   <section class="tools">
     <div class="container">
-      <h1 class="tools__title">What i <span class="tools__title_color_white">use</span></h1>
+      <h1 class="tools__title">What i <span class="tools__title_color_white">Use</span></h1>
       <div class="tools__container">
         <h2 class="tools__subtitle">Development</h2>
         <div class="tools__body">
