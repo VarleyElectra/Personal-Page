@@ -5,7 +5,7 @@
         <h2 class="about__title">A bit about me</h2>
         <div class="about__text">
           I am a frontend developer who is passionate about <span>creating
-          beautiful and useful web projects.</span> Besides development, I love play video games,
+          beautiful and useful projects.</span> Besides development, I love play video games,
           study something new and watch cybersport.
         </div>
       </div>

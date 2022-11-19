@@ -5,8 +5,7 @@
         <span class="hero__text hero__text_color_white">Frontend Developer</span>
         <br> specialising in <br>
         <span class="hero__text hero__text_color_main-gradient">Vue</span>
-        and
-        <span class="hero__text hero__text_color_main-gradient">Nuxt</span></h1>
+      </h1>
       <a href="#work" class="hero__arrow"></a>
     </div>
   </section>

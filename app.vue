@@ -7,7 +7,7 @@
     <TheWorks />
     <TheAbout />
 <!--    <NuxtWelcome />-->
-<!--    <TheFooter />-->
+    <TheFooter />
 </template>
 
 <script>
