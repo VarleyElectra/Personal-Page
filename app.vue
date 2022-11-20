@@ -1,12 +1,9 @@
 <template>
-    <h1 :style="{color: appConfig.theme.colors.primary}">Test text</h1>
-<!--    <img src="~/assets/img/cards/card-1.png" alt="Discover Nuxt 3" />-->
     <TheHeader />
     <TheHero />
     <TheTools />
     <TheWorks />
     <TheAbout />
-<!--    <NuxtWelcome />-->
     <TheFooter />
 </template>
 
@@ -17,7 +14,6 @@ export default {
     const nav = root.querySelector('nav');
 
     root.querySelectorAll('.observe').forEach(section => {
-      console.log('section: ', section)
       new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -26,7 +22,9 @@ export default {
             nav.querySelector(`a[href="#${id}"]`).classList.add('active');
           }
         })
-      }, {}).observe(section);
+      }, {
+        threshold: 0.5,
+      }).observe(section);
     })
   }
 }
@@ -34,4 +32,14 @@ export default {
 
 <script setup>
 const appConfig = useAppConfig()
+useHead({
+  title: `${appConfig.title}`,
+  meta: [
+    { name: 'description', content: `${appConfig.description}` },
+    { name: 'Content-Language', content: 'eng' },
+    { name: 'Author', content: `${appConfig.author}` },
+    { name: 'Copyright', content: `${appConfig.copyright}` },
+    { name: 'robots', content: `${appConfig.robots}` },
+  ],
+})
 </script>

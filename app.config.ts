@@ -1,10 +1,7 @@
 export default defineAppConfig({
-    title: 'Hello Nuxt',
-    theme: {
-        dark: true,
-        colors: {
-            primary: '#00dc82',
-            second: '#36E4DA'
-        }
-    }
+    title: 'My personal site',
+    description: 'There you can find info about my projects and hobbies, also you can find info how to connect with me.',
+    author: 'Gerasimov Alex',
+    copyright: 'Gerasimov Alex',
+    robots: 'index',
 })

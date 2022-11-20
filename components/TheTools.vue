@@ -1,5 +1,5 @@
 <template>
-  <section class="tools">
+  <section id="tools" class="observe tools">
     <div class="container">
       <h1 class="tools__title">What i <span class="tools__title_color_white">Use</span></h1>
       <div class="tools__container">
@@ -221,5 +221,6 @@ export default {
 }
 .tools__title_color_white {
   color: $textSubColor;
+  font-weight: 600;
 }
 </style>

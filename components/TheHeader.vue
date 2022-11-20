@@ -4,10 +4,10 @@
         <a href="" class="header__logo"><img src="~/assets/img/logo.svg" alt="logo image"></a>
         <nav class="header__menu">
           <ul class="menu__list">
-            <li class="menu__item"><a href="#home" class="menu__link">HOME</a></li>
-            <li class="menu__item"><a href="#work" class="menu__link">Work</a></li>
+            <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
+            <li class="menu__item"><a href="#tools" class="menu__link">Tools</a></li>
+            <li class="menu__item"><a href="#work" class="menu__link">Works</a></li>
             <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
-            <li class="menu__item"><a href="#footer" class="menu__link">Contact me</a></li>
           </ul>
         </nav>
         <div class="menu__icon">
