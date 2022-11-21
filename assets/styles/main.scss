@@ -39,6 +39,26 @@ body {
   padding: 0 15px;
 }
 
+.observe {
+  padding: 120px 0 80px;
+}
+
 [hidden] {
   display: none !important;
+}
+
+.container__title {
+  font-size: 40px;
+  font-weight: 300;
+  color: $textMainColor;
+}
+.container__title_color_white {
+  color: $textSubColor;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .container__title {
+    font-size: 30px;
+  }
 }

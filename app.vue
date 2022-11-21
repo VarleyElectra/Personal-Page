@@ -9,24 +9,7 @@
 
 <script>
 export default {
-  mounted() {
-    const root = document.querySelector('#__nuxt')
-    const nav = root.querySelector('nav');
 
-    root.querySelectorAll('.observe').forEach(section => {
-      new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            nav.querySelectorAll('a').forEach(link => link.classList.remove('active'))
-            let id = entry.target.getAttribute('id');
-            nav.querySelector(`a[href="#${id}"]`).classList.add('active');
-          }
-        })
-      }, {
-        threshold: 0.5,
-      }).observe(section);
-    })
-  }
 }
 </script>
 

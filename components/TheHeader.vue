@@ -22,19 +22,12 @@
 <script>
 export default {
   name: "TheHeader",
-  computed: {
-    menuBtn() {
-      return document.querySelector('.menu__icon');
-    },
-    menu() {
-      return document.querySelector('.menu__list');
-    },
-    anchors() {
-      return document.querySelectorAll('a[href*="#"]');
-    }
-  },
   mounted() {
-    this.anchors.forEach(anchor => {
+    const menuBtn = document.querySelector('.menu__icon');
+    const menu = document.querySelector('.menu__list');
+    const anchors = document.querySelectorAll('a[href*="#"]');
+
+    anchors.forEach(anchor => {
       anchor.addEventListener('click', e => {
         e.preventDefault();
 
@@ -44,6 +37,37 @@ export default {
           block: 'start',
         })
       })
+    })
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active')
+        menu.classList.toggle('active')
+      })
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.toggle('active')
+          menu.classList.toggle('active')
+        })
+      })
+    }
+
+    const root = document.querySelector('#__nuxt')
+    const nav = root.querySelector('nav');
+
+    root.querySelectorAll('.observe').forEach(section => {
+      new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            nav.querySelectorAll('a').forEach(link => link.classList.remove('active'))
+            let id = entry.target.getAttribute('id');
+            nav.querySelector(`a[href="#${id}"]`).classList.add('active');
+          }
+        })
+      }, {
+        threshold: 0.5,
+      }).observe(section);
     })
   }
 }
@@ -72,15 +96,13 @@ export default {
   display: flex;
   align-items: center;
   gap: 32px;
-  //transition: all .2s;
 }
 .menu__list.active {
   transform: translateX(0);
 }
 .menu__link.active {
   @include main-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-gradient;
 }
 .menu__link.active::before {
   opacity: 1;
@@ -88,8 +110,7 @@ export default {
 }
 .menu__link:hover{
   @include main-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-gradient;
 }
 .menu__link:hover::before {
   opacity: 1;
@@ -149,5 +170,32 @@ export default {
 .menu__icon.active span:last-child {
   transform: rotate(45deg);
   bottom: calc(50% - 1px);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu__icon {
+    display: block;
+  }
+  .menu__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $mainBgColor;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+  }
+  .menu__link {
+    font-size: 30px;
+  }
 }
 </style>

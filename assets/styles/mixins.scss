@@ -9,3 +9,8 @@
 @mixin main-gradient {
   background: linear-gradient(99.05deg, $primaryColor 0.07%, $subColor 106.32%);
 }
+
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

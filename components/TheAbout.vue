@@ -2,7 +2,9 @@
   <section id="about" class="observe about">
     <div class="container about__container">
       <div class="about__info">
-        <h2 class="about__title">A bit about me</h2>
+        <h2 class="container__title">
+          A bit about <span class="container__title_color_white">Me</span>
+        </h2>
         <div class="about__text">
           I am a frontend developer who is passionate about <span>creating
           beautiful and useful projects.</span> Besides development, I love play video games,
@@ -26,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  padding: 75px 0;
+
 }
 .about__container {
   display: flex;
@@ -38,18 +40,11 @@ export default {
   line-height: 150%;
   color: $textMainColor;
   font-weight: 300;
-  margin-top: 10px;
+  margin: 40px 0;
 }
 .about__text span {
   color: $textSubColor;
   font-weight: 600;
-}
-.about__title {
-  font-weight: 600;
-  font-size: 24px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $textSubColor;
 }
 .about__gallery {
   flex: 0 0 50%;
@@ -78,5 +73,16 @@ export default {
 .about__img:nth-child(3) {
   grid-column: 2/3;
   grid-row: 3/5;
+}
+
+@media (max-width: 992px) {
+  .about__container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .about__text {
+    font-size: 24px;
+  }
 }
 </style>

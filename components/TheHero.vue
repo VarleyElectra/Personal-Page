@@ -1,11 +1,11 @@
 <template>
   <section id="home" class="observe hero">
     <div class="container">
-      <h1 class="hero__title">I'm a
+      <h2 class="hero__title">I'm a
         <span class="hero__text hero__text_color_white">Frontend Developer</span>
-        <br> specialising in <br>
+        <br> specialised in <br>
         <span class="hero__text hero__text_color_main-gradient">Vue</span>
-      </h1>
+      </h2>
       <a href="#work" class="hero__arrow"></a>
     </div>
   </section>
@@ -37,8 +37,7 @@ export default {
 .hero__text_color_main-gradient {
   font-weight: 600;
   @include main-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-gradient;
 }
 .hero__text_color_white {
   color: $textSubColor;
@@ -53,5 +52,10 @@ export default {
   bottom: 42px;
   transform: translateX(-50%) rotate(90deg);
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 35px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section id="work" class="observe works">
     <div class="container works__container">
-      <h2 class="works__title">My <span>Works</span></h2>
+      <h2 class="container__title">My <span class="container__title_color_white">Works</span></h2>
       <div class="works__body">
         <div class="works__card card">
           <div class="card-container">
@@ -46,16 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 .works {
-  padding: 80px 0 120px;
-}
-.works__title {
-  font-weight: 300;
-  font-size: 40px;
-  color: $textMainColor;
-}
-.works__title span {
-  color: $textSubColor;
-  font-weight: 600;
+
 }
 .works__body {
   margin-top: 95px;
@@ -71,12 +62,12 @@ export default {
   flex-direction: row-reverse;
 }
 .card-container {
-  border-radius: 16px;
   overflow: hidden;
   flex: 0 0 50%;
 }
 .card-container__image {
   max-width: 100%;
+  border-radius: 16px;
 }
 .card__info {
   flex: 1 1 auto;
@@ -88,6 +79,8 @@ export default {
   text-transform: uppercase;
   color: $textSubColor;
   margin-bottom: 16px;
+  @include main-gradient;
+  @include text-gradient;
 }
 .card__text {
   font-weight: 300;
@@ -118,5 +111,25 @@ export default {
   @include main-gradient;
   border: 1px solid $mainBgColor;
   color: $mainBgColor;
+}
+
+@media (max-width: 768px) {
+  body .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  body .card_right {
+    flex-direction: column;
+  }
+  .card-container {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .card__text {
+    font-size: 24px;
+    margin-top: 10px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section id="tools" class="observe tools">
     <div class="container">
-      <h1 class="tools__title">What i <span class="tools__title_color_white">Use</span></h1>
+      <h2 class="container__title">What i <span class="container__title_color_white">Use</span></h2>
       <div class="tools__container">
         <h2 class="tools__subtitle">Development</h2>
         <div class="tools__body">
@@ -163,12 +163,6 @@ export default {
 
 <style lang="scss" scoped>
 .tools {
-  padding: 80px 0 130px;
-}
-.tools__title {
-  font-size: 40px;
-  font-weight: 300;
-  color: $textMainColor;
 }
 .tools__subtitle {
   font-size: 32px;
@@ -178,8 +172,7 @@ export default {
   margin: 0 auto;
   text-align: center;
   @include main-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-gradient;
 }
 .tools__item {
   @include center-content;
@@ -219,8 +212,17 @@ export default {
 .tools__container {
   margin: 30px auto;
 }
-.tools__title_color_white {
-  color: $textSubColor;
-  font-weight: 600;
+
+@media (max-width: 576px) {
+  .tools__body {
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .tools__subtitle {
+    font-size: 24px;
+  }
+  .tools__item {
+    width: 50px;
+  }
 }
 </style>
