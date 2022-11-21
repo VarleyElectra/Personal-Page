@@ -10,9 +10,9 @@
         </div>
       </div>
       <div class="about__gallery">
-        <div class="about__img"><img src="~/assets/img/about/study.png" alt=""></div>
-        <div class="about__img"><img src="~/assets/img/about/game.png" alt=""></div>
-        <div class="about__img"><img src="~/assets/img/about/cybersport.png" alt=""></div>
+        <div class="about__img"><img src="@/assets/img/about/study.png" alt=""></div>
+        <div class="about__img"><img src="@/assets/img/about/game.png" alt=""></div>
+        <div class="about__img"><img src="@/assets/img/about/cybersport.png" alt=""></div>
       </div>
     </div>
   </section>

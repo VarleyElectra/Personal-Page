@@ -11,7 +11,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/js.svg" alt="js logo" class="tools__img">
+              <img src="@/assets/img/logos/js.svg" alt="js logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -20,7 +20,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/nodejs.svg" alt="nodejs logo" class="tools__img">
+              <img src="@/assets/img/logos/nodejs.svg" alt="nodejs logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -29,7 +29,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/nuxt.svg" alt="nuxt logo" class="tools__img">
+              <img src="@/assets/img/logos/nuxt.svg" alt="nuxt logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -38,7 +38,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/vue.svg" alt="vue logo" class="tools__img">
+              <img src="@/assets/img/logos/vue.svg" alt="vue logo" class="tools__img">
             </a>
           </div>
         </div>
@@ -53,7 +53,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/html5.svg" alt="html5 logo" class="tools__img">
+              <img src="@/assets/img/logos/html5.svg" alt="html5 logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -62,7 +62,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/css3.svg" alt="css3 logo" class="tools__img">
+              <img src="@/assets/img/logos/css3.svg" alt="css3 logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -71,7 +71,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/scss.svg" alt="scss logo" class="tools__img">
+              <img src="@/assets/img/logos/scss.svg" alt="scss logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -80,7 +80,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/figma.svg" alt="figma logo" class="tools__img">
+              <img src="@/assets/img/logos/figma.svg" alt="figma logo" class="tools__img">
             </a>
           </div>
         </div>
@@ -95,7 +95,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/npm.svg" alt="npm logo" class="tools__img">
+              <img src="@/assets/img/logos/npm.svg" alt="npm logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -104,7 +104,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/webpack.svg" alt="webpack logo" class="tools__img">
+              <img src="@/assets/img/logos/webpack.svg" alt="webpack logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -113,7 +113,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/babel.svg" alt="babel logo" class="tools__img">
+              <img src="@/assets/img/logos/babel.svg" alt="babel logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -122,7 +122,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/eslint.svg" alt="eslint logo" class="tools__img">
+              <img src="@/assets/img/logos/eslint.svg" alt="eslint logo" class="tools__img">
             </a>
           </div>
         </div>
@@ -137,7 +137,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/git.svg" alt="git logo" class="tools__img">
+              <img src="@/assets/img/logos/git.svg" alt="git logo" class="tools__img">
             </a>
           </div>
           <div class="tools__item">
@@ -146,7 +146,7 @@
                 target="_blank"
                 class="tools__link"
             >
-              <img src="~/assets/img/logos/github.svg" alt="github logo" class="tools__img">
+              <img src="@/assets/img/logos/github.svg" alt="github logo" class="tools__img">
             </a>
           </div>
         </div>

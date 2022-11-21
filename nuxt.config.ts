@@ -1,12 +1,14 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-import {useHead} from "unhead";
 export default defineNuxtConfig({
+    ssr: false,
     app: {
-      head: {
-          link: [
-              { rel: 'icon', type: 'image/x-icon', href: '~/public/favicon.ico' }
-          ]
-      }
+      baseURL: process.env.NODE_ENV === 'production'
+          ? '/Personal-Page/'
+          : '/',
+      buildAssetsDir: '/Personal-Page/',
+        head: {
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/Personal-Page/favicon.ico' }]
+        }
     },
     css: ["@/assets/styles/main.scss"],
     vite: {

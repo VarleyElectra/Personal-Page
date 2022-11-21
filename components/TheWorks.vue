@@ -5,7 +5,7 @@
       <div class="works__body">
         <div class="works__card card">
           <div class="card-container">
-            <img class="card-container__image" src="~/assets/img/works/work-1.png" alt="work-1 img">
+            <img class="card-container__image" src="@/assets/img/works/work-1.png" alt="work-1 img">
           </div>
           <div class="card__info">
             <span class="card__tag">Front Dev Tools</span>
@@ -20,7 +20,7 @@
         </div>
         <div class="works__card card card_right">
           <div class="card-container">
-            <img class="card-container__image" src="~/assets/img/works/work-2.png" alt="work-2 img">
+            <img class="card-container__image" src="@/assets/img/works/work-2.png" alt="work-2 img">
           </div>
           <div class="card__info">
             <span class="card__tag">Connect Game</span>

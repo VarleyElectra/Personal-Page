@@ -1,7 +1,7 @@
 <template>
     <header class="header">
       <div class="container header__container">
-        <a href="" class="header__logo"><img src="~/assets/img/logo.svg" alt="logo image"></a>
+        <a href="" class="header__logo"><img src="@/assets/img/logo.svg" alt="logo image"></a>
         <nav class="header__menu">
           <ul class="menu__list">
             <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
@@ -50,23 +50,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//.header {
-//  width: 50vw;
-//  height: 300px;
-//  background-color: aquamarine;
-//  @include center-content;
-//  flex-direction: column;
-//
-//  &__title {
-//    font-size: 64px;
-//    color: red;
-//  }
-//
-//  &__text {
-//    font-size: 32px;
-//    color: $primaryColor;
-//  }
-//}
 .header {
   padding: 35px 15px;
   position: fixed;
