@@ -1,16 +1,21 @@
 <template>
     <header class="header">
       <div class="container header__container">
-        <a href="" class="header__logo"><img src="@/assets/img/logo.svg" alt="logo image"></a>
-        <nav class="header__menu">
-          <ul class="menu__list">
+        <div class="header__logo">
+          <svg class="header__svg" width="100%" height="100%" viewBox="0 0 124 124" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M55.7498 27.1551C52.5277 21.615 44.4723 21.6149 41.2502 27.1551L6.13404 87.5346C2.91191 93.0748 6.93956 100 13.3838 100H40.7975C38.0438 97.5934 37.0241 93.4303 39.1079 89.8584L65.7033 44.2694L55.7498 27.1551Z" fill="#80EEC0"/>
+            <path d="M78.0002 40.3997C80.6668 35.8668 87.3332 35.8668 89.9998 40.3997L119.061 89.801C121.728 94.3339 118.395 100 113.062 100H54.9383C49.6052 100 46.2719 94.3339 48.9385 89.801L78.0002 40.3997Z" fill="#00DC82"/>
+          </svg>
+        </div>
+        <nav ref="nav" class="header__menu">
+          <ul ref="menu" class="menu__list">
             <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
             <li class="menu__item"><a href="#tools" class="menu__link">Tools</a></li>
             <li class="menu__item"><a href="#work" class="menu__link">Works</a></li>
             <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
           </ul>
         </nav>
-        <div class="menu__icon">
+        <div ref="menuBtn" class="menu__icon">
           <span></span>
           <span></span>
           <span></span>
@@ -19,19 +24,23 @@
     </header>
 </template>
 
-<script>
-export default {
-  name: "TheHeader",
-  mounted() {
-    const menuBtn = document.querySelector('.menu__icon');
-    const menu = document.querySelector('.menu__list');
+<script setup>
+import { ref, onMounted } from 'vue'
+  console.log('mounted');
+  //TODO заменить на refs
+  const menuBtn = ref(null);
+  const menu = ref(null);
+  const nav = ref(null);
+
+  onMounted(() => {
     const anchors = document.querySelectorAll('a[href*="#"]');
+    const root = document.querySelector('#__nuxt')
 
     anchors.forEach(anchor => {
       anchor.addEventListener('click', e => {
         e.preventDefault();
-
         const blockID = anchor.getAttribute('href').substring(1);
+        console.log('blockID', blockID);
         document.getElementById(blockID).scrollIntoView({
           behavior: 'smooth',
           block: 'start',
@@ -39,36 +48,88 @@ export default {
       })
     })
 
-    if (menuBtn && menu) {
-      menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active')
-        menu.classList.toggle('active')
+    if (menuBtn.value && menu.value) {
+      menuBtn.value.addEventListener('click', () => {
+        menuBtn.value.classList.toggle('active')
+        menu.value.classList.toggle('active')
       })
 
-      menu.querySelectorAll('a').forEach(link => {
+      menu.value.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          menuBtn.classList.toggle('active')
-          menu.classList.toggle('active')
+          menuBtn.value.classList.toggle('active')
+          menu.value.classList.toggle('active')
         })
+      })
+
+      root.querySelectorAll('.observe').forEach(section => {
+        new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              nav.value.querySelectorAll('a').forEach(link => link.classList.remove('active'))
+              let id = entry.target.getAttribute('id');
+              nav.value.querySelector(`a[href="#${id}"]`).classList.add('active');
+            }
+          })
+        }, {
+          threshold: 0.5,
+        }).observe(section);
       })
     }
+  })
+</script>
 
-    const root = document.querySelector('#__nuxt')
-    const nav = root.querySelector('nav');
+<script>
+export default {
+  name: "TheHeader",
+  mounted() {
+    // console.log('mounted');
+    // console.log('this: ', this);
+    // //TODO заменить на refs
+    // const menuBtn = document.querySelector('.menu__icon');
+    // const menu = document.querySelector('.menu__list');
+    // const anchors = document.querySelectorAll('a[href*="#"]');
 
-    root.querySelectorAll('.observe').forEach(section => {
-      new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            nav.querySelectorAll('a').forEach(link => link.classList.remove('active'))
-            let id = entry.target.getAttribute('id');
-            nav.querySelector(`a[href="#${id}"]`).classList.add('active');
-          }
-        })
-      }, {
-        threshold: 0.5,
-      }).observe(section);
-    })
+    // anchors.forEach(anchor => {
+    //   anchor.addEventListener('click', e => {
+    //     e.preventDefault();
+    //     const blockID = anchor.getAttribute('href').substring(1);
+    //     document.getElementById(blockID).scrollIntoView({
+    //       behavior: 'smooth',
+    //       block: 'start',
+    //     })
+    //   })
+    // })
+
+    // if (this.$refs.menuBtn && this.$refs.this.$refs.menu) {
+    //   this.$refs.menuBtn.addEventListener('click', () => {
+    //     this.$refs.menuBtn.classList.toggle('active')
+    //     this.$refs.menu.classList.toggle('active')
+    //   })
+    //
+    //   this.$refs.menu.querySelectorAll('a').forEach(link => {
+    //     link.addEventListener('click', () => {
+    //       this.$refs.menuBtn.classList.toggle('active')
+    //       this.$refs.menu.classList.toggle('active')
+    //     })
+    //   })
+    // }
+
+    // const root = document.querySelector('#__nuxt')
+    // const nav = root.querySelector('nav');
+
+    // root.querySelectorAll('.observe').forEach(section => {
+    //   new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //       if (entry.isIntersecting) {
+    //         this.$refs.nav.querySelectorAll('a').forEach(link => link.classList.remove('active'))
+    //         let id = entry.target.getAttribute('id');
+    //         this.$refs.nav.querySelector(`a[href="#${id}"]`).classList.add('active');
+    //       }
+    //     })
+    //   }, {
+    //     threshold: 0.5,
+    //   }).observe(section);
+    // })
   }
 }
 </script>
@@ -90,6 +151,12 @@ export default {
 }
 .header__logo {
   width: 64px;
+}
+.header__svg path:nth-child(1) {
+  fill: $primaryColor;
+}
+.header__svg path:nth-child(2) {
+  fill: $subColor;
 }
 .menu__list {
   list-style: none;

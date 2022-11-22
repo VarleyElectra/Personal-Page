@@ -2,7 +2,7 @@
   <section id="home" class="observe hero">
     <div class="container">
       <h2 class="hero__title">I'm a
-        <span class="hero__text hero__text_color_white">Frontend Developer</span>
+        <span class="key-text">Frontend Developer</span>
         <br> specialised in <br>
         <span class="hero__text hero__text_color_main-gradient">Vue</span>
       </h2>

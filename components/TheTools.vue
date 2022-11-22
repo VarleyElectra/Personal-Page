@@ -1,7 +1,7 @@
 <template>
   <section id="tools" class="observe tools">
     <div class="container">
-      <h2 class="container__title">What i <span class="container__title_color_white">Use</span></h2>
+      <h2 class="container__title">I create my projects <span class="key-text">with</span></h2>
       <div class="tools__container">
         <h2 class="tools__subtitle">Development</h2>
         <div class="tools__body">

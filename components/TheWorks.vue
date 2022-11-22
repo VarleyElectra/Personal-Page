@@ -1,7 +1,7 @@
 <template>
   <section id="work" class="observe works">
     <div class="container works__container">
-      <h2 class="container__title">My <span class="container__title_color_white">Works</span></h2>
+      <h2 class="container__title">My <span class="key-text">Projects</span></h2>
       <div class="works__body">
         <div class="works__card card">
           <div class="card-container">
@@ -9,8 +9,8 @@
           </div>
           <div class="card__info">
             <span class="card__tag">Front Dev Tools</span>
-            <div class="card__text">A site that allows you to generate HTML&CSS code using a
-              <span>visual interface.</span>
+            <div class="card__text">A visual interface of the site can help you in generating HTML&CSS code.
+              <span class="key-text">Make it easier!</span>
             </div>
             <div class="card__category">Web Site</div>
             <a href="https://varleyelectra.github.io/Front-Dev-Tools/" class="card__button" target="_blank">
@@ -25,7 +25,7 @@
           <div class="card__info">
             <span class="card__tag">Connect Game</span>
             <div class="card__text">Connect a certain number of blocks of the same color with rectangular lines to
-              <span>win!</span>
+              <span class="key-text">win!</span>
             </div>
             <div class="card__category">Javascript Game</div>
             <a href="https://varleyelectra.github.io/Connect-Game/" class="card__button" target="_blank">
@@ -88,10 +88,6 @@ export default {
   line-height: 150%;
   color: $textMainColor;
   margin-bottom: 24px;
-}
-.card__text span {
-  color: $textSubColor;
-  font-weight: 600;
 }
 .card__category {
   font-size: 18px;

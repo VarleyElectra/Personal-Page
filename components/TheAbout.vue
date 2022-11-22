@@ -3,18 +3,18 @@
     <div class="container about__container">
       <div class="about__info">
         <h2 class="container__title">
-          A bit about <span class="container__title_color_white">Me</span>
+          About <span class="key-text">Me</span>
         </h2>
         <div class="about__text">
-          I am a frontend developer who is passionate about <span>creating
+          I am a frontend developer who is passionate about <span class="key-text">creating
           beautiful and useful projects.</span> Besides development, I love play video games,
           study something new and watch cybersport.
         </div>
       </div>
       <div class="about__gallery">
-        <div class="about__img"><img src="@/assets/img/about/study.png" alt=""></div>
-        <div class="about__img"><img src="@/assets/img/about/game.png" alt=""></div>
-        <div class="about__img"><img src="@/assets/img/about/cybersport.png" alt=""></div>
+        <div class="about__img"><img src="@/assets/img/about/study.png" alt="Study image"></div>
+        <div class="about__img"><img src="@/assets/img/about/game.png" alt="Game image"></div>
+        <div class="about__img"><img src="@/assets/img/about/cybersport.png" alt="Cybersport image"></div>
       </div>
     </div>
   </section>
@@ -41,10 +41,6 @@ export default {
   color: $textMainColor;
   font-weight: 300;
   margin: 40px 0;
-}
-.about__text span {
-  color: $textSubColor;
-  font-weight: 600;
 }
 .about__gallery {
   flex: 0 0 50%;
