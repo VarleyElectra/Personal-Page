@@ -1,4 +1,4 @@
-# [Link to my website](https://varleyelectra.github.io/Personal-Page/)
+# [Link](https://varleyelectra.github.io/Personal-Page/) to my website.
 
 ## Setup
 
