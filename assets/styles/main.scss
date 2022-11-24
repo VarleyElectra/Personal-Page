@@ -57,6 +57,10 @@ body {
   font-weight: 600;
 }
 
+.tools, .works, .about {
+  scroll-margin-top: 30px;
+}
+
 @media (max-width: 576px) {
   .container__title {
     font-size: 30px;

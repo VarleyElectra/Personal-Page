@@ -26,8 +26,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-  console.log('mounted');
-  //TODO заменить на refs
   const menuBtn = ref(null);
   const menu = ref(null);
   const nav = ref(null);
@@ -40,7 +38,6 @@ import { ref, onMounted } from 'vue'
       anchor.addEventListener('click', e => {
         e.preventDefault();
         const blockID = anchor.getAttribute('href').substring(1);
-        console.log('blockID', blockID);
         document.getElementById(blockID).scrollIntoView({
           behavior: 'smooth',
           block: 'start',
@@ -48,90 +45,33 @@ import { ref, onMounted } from 'vue'
       })
     })
 
-    if (menuBtn.value && menu.value) {
-      menuBtn.value.addEventListener('click', () => {
+    menuBtn.value.addEventListener('click', () => {
+      menuBtn.value.classList.toggle('active')
+      menu.value.classList.toggle('active')
+    })
+
+    menu.value.addEventListener('click', event => {
+      if (event.target.classList.contains('menu__link')) {
         menuBtn.value.classList.toggle('active')
         menu.value.classList.toggle('active')
-      })
+      }
 
-      menu.value.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          menuBtn.value.classList.toggle('active')
-          menu.value.classList.toggle('active')
+    })
+
+    root.querySelectorAll('.observe').forEach(section => {
+      new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            nav.value.querySelectorAll('a').forEach(link => link.classList.remove('active'))
+            let id = entry.target.getAttribute('id');
+            nav.value.querySelector(`a[href="#${id}"]`).classList.add('active');
+          }
         })
-      })
-
-      root.querySelectorAll('.observe').forEach(section => {
-        new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              nav.value.querySelectorAll('a').forEach(link => link.classList.remove('active'))
-              let id = entry.target.getAttribute('id');
-              nav.value.querySelector(`a[href="#${id}"]`).classList.add('active');
-            }
-          })
-        }, {
-          threshold: 0.5,
-        }).observe(section);
-      })
-    }
+      }, {
+        threshold: 0.5,
+      }).observe(section);
+    })
   })
-</script>
-
-<script>
-export default {
-  name: "TheHeader",
-  mounted() {
-    // console.log('mounted');
-    // console.log('this: ', this);
-    // //TODO заменить на refs
-    // const menuBtn = document.querySelector('.menu__icon');
-    // const menu = document.querySelector('.menu__list');
-    // const anchors = document.querySelectorAll('a[href*="#"]');
-
-    // anchors.forEach(anchor => {
-    //   anchor.addEventListener('click', e => {
-    //     e.preventDefault();
-    //     const blockID = anchor.getAttribute('href').substring(1);
-    //     document.getElementById(blockID).scrollIntoView({
-    //       behavior: 'smooth',
-    //       block: 'start',
-    //     })
-    //   })
-    // })
-
-    // if (this.$refs.menuBtn && this.$refs.this.$refs.menu) {
-    //   this.$refs.menuBtn.addEventListener('click', () => {
-    //     this.$refs.menuBtn.classList.toggle('active')
-    //     this.$refs.menu.classList.toggle('active')
-    //   })
-    //
-    //   this.$refs.menu.querySelectorAll('a').forEach(link => {
-    //     link.addEventListener('click', () => {
-    //       this.$refs.menuBtn.classList.toggle('active')
-    //       this.$refs.menu.classList.toggle('active')
-    //     })
-    //   })
-    // }
-
-    // const root = document.querySelector('#__nuxt')
-    // const nav = root.querySelector('nav');
-
-    // root.querySelectorAll('.observe').forEach(section => {
-    //   new IntersectionObserver((entries) => {
-    //     entries.forEach(entry => {
-    //       if (entry.isIntersecting) {
-    //         this.$refs.nav.querySelectorAll('a').forEach(link => link.classList.remove('active'))
-    //         let id = entry.target.getAttribute('id');
-    //         this.$refs.nav.querySelector(`a[href="#${id}"]`).classList.add('active');
-    //       }
-    //     })
-    //   }, {
-    //     threshold: 0.5,
-    //   }).observe(section);
-    // })
-  }
-}
 </script>
 
 <style scoped lang="scss">

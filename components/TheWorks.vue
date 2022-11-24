@@ -18,7 +18,7 @@
             </a>
           </div>
         </div>
-        <div class="works__card card card_right">
+        <div class="works__card card">
           <div class="card-container">
             <img class="card-container__image" src="@/assets/img/works/work-2.png" alt="work-2 img">
           </div>
@@ -58,7 +58,7 @@ export default {
 .card:not(:last-child) {
   margin-bottom: 95px;
 }
-.card_right {
+.card:nth-child(even) {
   flex-direction: row-reverse;
 }
 .card-container {
@@ -110,12 +110,12 @@ export default {
 }
 
 @media (max-width: 768px) {
-  body .card {
+  .card {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  body .card_right {
+  .card:nth-child(even) {
     flex-direction: column;
   }
   .card-container {
