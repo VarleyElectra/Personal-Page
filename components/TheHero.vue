@@ -25,34 +25,35 @@ export default {
   justify-content: center;
   position: relative;
   min-height: 400px;
+
+  &__title {
+    font-weight: 300;
+    font-size: 56px;
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $textMainColor;
+  }
+
+  &__text_color_main-gradient {
+    font-weight: 600;
+    @include main-gradient;
+    @include text-gradient;
+  }
+
+  &__arrow {
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: transparent url('/assets/img/arrow.svg') center center no-repeat;
+    position: absolute;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%) rotate(90deg);
+    cursor: pointer;
+  }
 }
-.hero__title {
-  font-weight: 300;
-  font-size: 56px;
-  text-align: center;
-  line-height: 150%;
-  letter-spacing: -0.02em;
-  color: $textMainColor;
-}
-.hero__text_color_main-gradient {
-  font-weight: 600;
-  @include main-gradient;
-  @include text-gradient;
-}
-.hero__text_color_white {
-  color: $textSubColor;
-}
-.hero__arrow {
-  border: none;
-  width: 40px;
-  height: 40px;
-  background: transparent url('/assets/img/arrow.svg') center center no-repeat;
-  position: absolute;
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%) rotate(90deg);
-  cursor: pointer;
-}
+
 @media (max-width: 768px) {
   .hero__title {
     font-size: 35px;

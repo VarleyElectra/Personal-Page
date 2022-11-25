@@ -163,54 +163,61 @@ export default {
 
 <style lang="scss" scoped>
 .tools {
-}
-.tools__subtitle {
-  font-size: 32px;
-  line-height: 150%;
-  font-weight: 600;
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: center;
-  @include main-gradient;
-  @include text-gradient;
-}
-.tools__item {
-  @include center-content;
-  width: 75px;
-  cursor: pointer;
-  position: relative;
-}
-.tools__item:hover::before {
-  opacity: 1;
-  visibility: visible;
-}
-.tools__item::before {
-  content: "";
-  width: 100%;
-  height: 3px;
-  border-radius: 15px;
-  @include main-gradient;
-  position: absolute;
-  bottom: -10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.75s;
-}
-.tools__link {
-  width: 100%;
-}
-.tools__img {
-  width: 100%;
-}
-.tools__body {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-.tools__container {
-  margin: 30px auto;
+  &__subtitle {
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: 600;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+    @include main-gradient;
+    @include text-gradient;
+  }
+
+  &__item {
+    @include center-content;
+    width: 75px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__item:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__item::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    border-radius: 15px;
+    @include main-gradient;
+    position: absolute;
+    bottom: -10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.75s;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__body {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  &__container {
+    margin: 30px auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -218,9 +225,11 @@ export default {
     margin-top: 40px;
     gap: 20px;
   }
+
   .tools__subtitle {
     font-size: 24px;
   }
+
   .tools__item {
     width: 50px;
   }

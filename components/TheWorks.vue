@@ -46,68 +46,79 @@ export default {
 
 <style lang="scss" scoped>
 .works {
+  &__body {
+    margin-top: 95px;
+  }
+}
 
-}
-.works__body {
-  margin-top: 95px;
-}
 .card {
   display: flex;
   gap: 32px;
+
+  &:not(:last-child) {
+    margin-bottom: 95px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  &-container {
+    overflow: hidden;
+    flex: 0 0 50%;
+  }
+
+  &-container__image {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    align-self: flex-end;
+  }
+
+  &__tag {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $textSubColor;
+    margin-bottom: 16px;
+    @include main-gradient;
+    @include text-gradient;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 150%;
+    color: $textMainColor;
+    margin-bottom: 24px;
+  }
+
+  &__category {
+    font-size: 18px;
+    color: $textSubColor;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid $textMainColor;
+    border-radius: 100px;
+    color: $textSubColor;
+    text-decoration: none;
+    position: relative;
+  }
+
+  &__button:hover {
+    @include main-gradient;
+    border: 1px solid $mainBgColor;
+    color: $mainBgColor;
+  }
 }
-.card:not(:last-child) {
-  margin-bottom: 95px;
-}
-.card:nth-child(even) {
-  flex-direction: row-reverse;
-}
-.card-container {
-  overflow: hidden;
-  flex: 0 0 50%;
-}
-.card-container__image {
-  max-width: 100%;
-  border-radius: 16px;
-}
-.card__info {
-  flex: 1 1 auto;
-  align-self: flex-end;
-}
-.card__tag {
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: $textSubColor;
-  margin-bottom: 16px;
-  @include main-gradient;
-  @include text-gradient;
-}
-.card__text {
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 150%;
-  color: $textMainColor;
-  margin-bottom: 24px;
-}
-.card__category {
-  font-size: 18px;
-  color: $textSubColor;
-}
-.card__button {
-  display: inline-block;
-  margin-top: 32px;
-  padding: 10px 20px 10px 20px;
-  border: 1px solid $textMainColor;
-  border-radius: 100px;
-  color: $textSubColor;
-  text-decoration: none;
-  position: relative;
-}
-.card__button:hover {
-  @include main-gradient;
-  border: 1px solid $mainBgColor;
-  color: $mainBgColor;
-}
+
 
 @media (max-width: 768px) {
   .card {
@@ -115,9 +126,11 @@ export default {
     align-items: center;
     text-align: center;
   }
+
   .card:nth-child(even) {
     flex-direction: column;
   }
+
   .card-container {
     width: 80%;
   }

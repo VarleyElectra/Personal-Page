@@ -28,47 +28,53 @@ export default {
 
 <style lang="scss" scoped>
 .about {
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 
-}
-.about__container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.about__text {
-  font-size: 32px;
-  line-height: 150%;
-  color: $textMainColor;
-  font-weight: 300;
-  margin: 40px 0;
-}
-.about__gallery {
-  flex: 0 0 50%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 20px;
-}
-.about__img {
-  border-radius: 10px;
-  overflow: hidden;
-}
-.about__img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.about__img:nth-child(1) {
-  grid-column: 1/2;
-  grid-row: 2/4;
-}
-.about__img:nth-child(2) {
-  grid-column: 2/3;
-  grid-row: 1/3;
-}
-.about__img:nth-child(3) {
-  grid-column: 2/3;
-  grid-row: 3/5;
+  &__text {
+    font-size: 32px;
+    line-height: 150%;
+    color: $textMainColor;
+    font-weight: 300;
+    margin: 40px 0;
+  }
+
+  &__gallery {
+    flex: 0 0 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  &__img {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__img:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  &__img:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  &__img:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 3/5;
+  }
 }
 
 @media (max-width: 992px) {

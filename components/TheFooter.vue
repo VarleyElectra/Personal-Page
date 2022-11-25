@@ -142,52 +142,62 @@ export default {
 <style lang="scss">
 .footer {
   padding: 80px 0 40px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 56px;
+    letter-spacing: -0.02em;
+    color: $textSubColor;
+    font-weight: 600;
+  }
+
+  &__title span {
+    font-weight: 300;
+    color: $textMainColor;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: 32px;
+    color: $textSubColor;
+    margin-top: 15px;
+  }
+
+  &__socials {
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+  }
+
+  &__social svg {
+    width: 40px;
+    height: 40px;
+    fill: $primaryColor;
+    transition: all .2s;
+  }
+
+  &__social:hover svg {
+    fill: $subColor;
+    transform: scale(1.3);
+  }
+
+  &__social:not(:last-child) {
+    margin-right: 55px;
+  }
 }
-.footer__container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.footer__title {
-  font-size: 56px;
-  letter-spacing: -0.02em;
-  color: $textSubColor;
-  font-weight: 600;
-}
-.footer__title span {
-  font-weight: 300;
-  color: $textMainColor;
-}
-.footer__subtitle {
-  font-weight: 300;
-  font-size: 32px;
-  color: $textSubColor;
-  margin-top: 15px;
-}
-.footer__socials {
-  display: flex;
-  margin-top: 60px;
-  align-items: center;
-}
-.footer__social svg {
-  width: 40px;
-  height: 40px;
-  fill: $primaryColor;
-  transition: all .2s;
-}
-.footer__social:hover svg {
-  fill: $subColor;
-  transform: scale(1.3);
-}
-.footer__social:not(:last-child) {
-  margin-right: 55px;
-}
+
 @media (max-width: 576px) {
   .footer__social svg {
     width: 32px;
     height: 32px;
   }
+
   .footer__social:not(:last-child) {
     margin-right: 40px;
   }
@@ -196,10 +206,12 @@ export default {
   .footer__title {
     font-size: 35px;
   }
+
   .footer__social svg {
     width: 24px;
     height: 24px;
   }
+
   .footer__social:not(:last-child) {
     margin-right: 20px;
   }

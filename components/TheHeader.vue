@@ -8,14 +8,14 @@
           </svg>
         </div>
         <nav ref="nav" class="header__menu">
-          <ul ref="menu" class="menu__list">
+          <ul ref="menu" @click="changeMenuLink" class="menu__list">
             <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
             <li class="menu__item"><a href="#tools" class="menu__link">Tools</a></li>
             <li class="menu__item"><a href="#work" class="menu__link">Works</a></li>
             <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
           </ul>
         </nav>
-        <div ref="menuBtn" class="menu__icon">
+        <div ref="menuBtn" @click="menuToggle" class="menu__icon">
           <span></span>
           <span></span>
           <span></span>
@@ -30,6 +30,17 @@ import { ref, onMounted } from 'vue'
   const menu = ref(null);
   const nav = ref(null);
 
+  function menuToggle() {
+    menuBtn.value.classList.toggle('active')
+    menu.value.classList.toggle('active')
+  }
+
+  function changeMenuLink(event) {
+    if (event.target.classList.contains('menu__link')) {
+      menuToggle()
+    }
+  }
+
   onMounted(() => {
     const anchors = document.querySelectorAll('a[href*="#"]');
     const root = document.querySelector('#__nuxt')
@@ -43,19 +54,6 @@ import { ref, onMounted } from 'vue'
           block: 'start',
         })
       })
-    })
-
-    menuBtn.value.addEventListener('click', () => {
-      menuBtn.value.classList.toggle('active')
-      menu.value.classList.toggle('active')
-    })
-
-    menu.value.addEventListener('click', event => {
-      if (event.target.classList.contains('menu__link')) {
-        menuBtn.value.classList.toggle('active')
-        menu.value.classList.toggle('active')
-      }
-
     })
 
     root.querySelectorAll('.observe').forEach(section => {
@@ -83,47 +81,58 @@ import { ref, onMounted } from 'vue'
   right: 0;
   z-index: 5;
   background-color: #010208;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 64px;
+  }
+
+  &__svg path:nth-child(1) {
+    fill: $primaryColor;
+  }
+
+  &__svg path:nth-child(2) {
+    fill: $subColor;
+  }
 }
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__logo {
-  width: 64px;
-}
-.header__svg path:nth-child(1) {
-  fill: $primaryColor;
-}
-.header__svg path:nth-child(2) {
-  fill: $subColor;
-}
+
 .menu__list {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 32px;
 }
+
 .menu__list.active {
   transform: translateX(0);
 }
+
 .menu__link.active {
   @include main-gradient;
   @include text-gradient;
 }
+
 .menu__link.active::before {
   opacity: 1;
   visibility: visible;
 }
+
 .menu__link:hover{
   @include main-gradient;
   @include text-gradient;
 }
+
 .menu__link:hover::before {
   opacity: 1;
   visibility: visible;
   transition: 1s;
 }
+
 .menu__link {
   font-weight: 600;
   font-size: 14px;
@@ -132,6 +141,7 @@ import { ref, onMounted } from 'vue'
   text-decoration: none;
   position: relative;
 }
+
 .menu__link::before {
   content: '';
   width: 100%;
@@ -143,6 +153,7 @@ import { ref, onMounted } from 'vue'
   opacity: 0;
   visibility: hidden;
 }
+
 .menu__icon {
   display: none;
   width: 30px;
@@ -151,6 +162,7 @@ import { ref, onMounted } from 'vue'
   z-index: 5;
   cursor: pointer;
 }
+
 .menu__icon span {
   position: absolute;
   top: calc(50% - 1px);
@@ -160,20 +172,25 @@ import { ref, onMounted } from 'vue'
   background-color: $textSubColor;
   transition: all .2s;
 }
+
 .menu__icon span:first-child {
   top: 0;
 }
+
 .menu__icon span:last-child {
   top: auto;
   bottom: 0;
 }
+
 .menu__icon.active span {
   transform: scale(0);
 }
+
 .menu__icon.active span:first-child {
   transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
+
 .menu__icon.active span:last-child {
   transform: rotate(45deg);
   bottom: calc(50% - 1px);
@@ -189,6 +206,7 @@ import { ref, onMounted } from 'vue'
   .menu__icon {
     display: block;
   }
+
   .menu__list {
     position: absolute;
     top: 0;
@@ -201,6 +219,7 @@ import { ref, onMounted } from 'vue'
     align-items: center;
     transform: translateX(-100%);
   }
+
   .menu__link {
     font-size: 30px;
   }
